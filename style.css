@@ -307,7 +307,7 @@ font-size:2em;
 min-width:10px;
 border-radius:0.5em;
 }
-#contact {
+ #contact {
             background-color: var(--second-background);
             padding: 2em;
             min-height: 60vh;
@@ -318,65 +318,83 @@ border-radius:0.5em;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1em;
-            max-width: 300px;
+            gap: 1.5em;
+            max-width: 400px;
             margin: 0 auto;
+            padding: 2em;
+            background-color: var(--background);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         form .input-box {
             display: flex;
             flex-direction: column;
-            align-items: baseline;
-            gap: 1em;
+            align-items: flex-start;
+            gap: 0.5em;
             width: 100%;
         }
 
         .input-box span {
-            font-size: 1.5em;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--text-color);
         }
 
         form input, 
         form textarea {
-            font-size: 1.3em;
-            padding: 1em 5em;
+            font-size: 1em;
+            padding: 0.8em;
             border-radius: 0.5em;
-            border: none;
+            border: 1px solid #ccc;
             outline: none;
             width: 100%;
+            background-color: var(--input-bg);
+            color: #333;
             box-sizing: border-box;
         }
 
         form input:focus,
         form textarea:focus {
-            background: rgb(229, 229, 229);
+            border-color: var(--btn-bg);
+            background-color: #fff;
         }
 
         form textarea {
-            min-height: 150px;
+            min-height: 120px;
             resize: vertical;
         }
 
         .btn {
-            font-size: 1.3em;
-            padding: 1em 5em;
+            font-size: 1.1em;
+            padding: 0.8em 2em;
             border-radius: 0.5em;
             border: none;
             outline: none;
-            background: #4267B2;
+            background: var(--btn-bg);
             color: white;
             cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--btn-hover-bg);
         }
 
         footer {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 9em;
-            bottom: 0;
             background-color: var(--background);
             width: 100%;
-            padding: 2em 15%;
+            padding: 1.5em 0;
+            color: var(--text-color);
             box-sizing: border-box;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
         }
 
         .col-left {
