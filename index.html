@@ -145,38 +145,52 @@
 
 
  </section>
-<form id="contact-form">
-        <div class="input-box">
-            <span>Full Name</span>
-            <input type="text" name="from_name" placeholder="Enter Your Full Name" required>
+<form id="contact-form" class="contact-form">
+        <div class="input-group">
+            <label>Full Name</label>
+            <input 
+                type="text" 
+                name="from_name" 
+                placeholder="Enter Your Full Name" 
+                required
+            >
         </div>
-        <div class="input-box">
-            <span>Your Email</span>
-            <input type="email" name="reply_to" placeholder="Enter Your Email" required>
+
+        <div class="input-group">
+            <label>Your Email</label>
+            <input 
+                type="email" 
+                name="reply_to" 
+                placeholder="Enter Your Email" 
+                required
+            >
         </div>
-        <div class="input-box">
-            <span>Your Message Please</span>
-            <textarea name="message" placeholder="Enter your message" required></textarea>
+
+        <div class="input-group">
+            <label>Your Message</label>
+            <textarea 
+                name="message" 
+                placeholder="Enter your message"
+                required
+            ></textarea>
         </div>
-        <button type="submit" class="btn">Submit</button>
+
+        <button type="submit" class="submit-btn">Send Message</button>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function() {
-            // Initialize with your public key
             emailjs.init("2mX8ihjioWvOLgcMs");
         })();
 
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show loading state
             const btn = this.querySelector('button');
             btn.disabled = true;
             btn.textContent = 'Sending...';
 
-            // Add template parameters
             const templateParams = {
                 to_email: 'jayaprakash.gorla@gmail.com',
                 ...Object.fromEntries(new FormData(this))
@@ -198,7 +212,6 @@
                 });
         });
     </script>
-
 
   <footer>
     <div class="col-left">
