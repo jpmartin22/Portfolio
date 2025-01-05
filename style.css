@@ -328,7 +328,7 @@ border-radius:0.5em;
             flex-direction: column;
             align-items: baseline;
             gap: 1em;
-            width: 50%;
+            width: 100%;
         }
 
         .input-box span {
@@ -342,7 +342,7 @@ border-radius:0.5em;
             border-radius: 0.5em;
             border: none;
             outline: none;
-            width: 60%;
+            width: 100%;
             box-sizing: border-box;
         }
 
@@ -371,7 +371,7 @@ border-radius:0.5em;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6em;
+            gap: 9em;
             bottom: 0;
             background-color: var(--background);
             width: 100%;
@@ -400,7 +400,7 @@ display:flex;
 flex-direction:column;
 gap:1em;
 color:white;
-max-width :500;
+max-width 400;
 }
 .col-right span{
 font-size:1.3em;
