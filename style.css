@@ -370,16 +370,17 @@ border-radius:0.5em;
             font-size: 1.1em;
             padding: 0.8em 2em;
             border-radius: 0.5em;
-            border: none;
+            border: 2px solid var(--btn-border);
             outline: none;
             background: var(--btn-bg);
             color: var(--btn-text);
             cursor: pointer;
-            transition: background 0.3s ease, transform 0.2s ease;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
         }
 
         .btn:hover {
             background: var(--btn-hover-bg);
+            color: var(--btn-hover-text);
             transform: scale(1.05);
         }
 
