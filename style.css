@@ -310,7 +310,7 @@ border-radius:0.5em;
 #contact {
             background-color: var(--second-background);
             padding: 2em;
-            min-height: 80vh;
+            min-height: 60vh;
         }
 
         form {
@@ -318,8 +318,8 @@ border-radius:0.5em;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 2em;
-            max-width: 500px;
+            gap: 1em;
+            max-width: 300px;
             margin: 0 auto;
         }
 
@@ -328,7 +328,7 @@ border-radius:0.5em;
             flex-direction: column;
             align-items: baseline;
             gap: 1em;
-            width: 100%;
+            width: 50%;
         }
 
         .input-box span {
@@ -342,7 +342,7 @@ border-radius:0.5em;
             border-radius: 0.5em;
             border: none;
             outline: none;
-            width: 100%;
+            width: 60%;
             box-sizing: border-box;
         }
 
