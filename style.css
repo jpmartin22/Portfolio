@@ -8,13 +8,26 @@
   font-family: "Poppins";
 }
 :root {
-  --background: rgb(24, 24, 24);
-  --second-background: rgb(21, 21, 21);
-}
-body{
-     min-height:100vh;
-     background-color: var(--background);
-}
+            --second-background: #1e1e2f;
+            --background: #28293e;
+            --text-color: #f0f0f0;
+            --input-bg: #2c2c3a;
+            --input-border: #555;
+            --input-focus: #00bcd4;
+            --btn-bg: transparent;
+            --btn-hover-bg: transparent;
+            --btn-border: violet;
+            --btn-text: white;
+            --btn-hover-text: #FFD700;
+        }
+body {
+            font-family: Arial, sans-serif;
+            background-color: var(--second-background);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 nav {
   position: fixed;
   top: 0;
@@ -307,7 +320,7 @@ font-size:2em;
 min-width:10px;
 border-radius:0.5em;
 }
-#contact {
+ #contact {
             background-color: var(--second-background);
             padding: 2em;
             min-height: 60vh;
@@ -375,12 +388,13 @@ border-radius:0.5em;
             background: var(--btn-bg);
             color: var(--btn-text);
             cursor: pointer;
-            transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
             background: var(--btn-hover-bg);
             color: var(--btn-hover-text);
+            border-color: var(--btn-hover-text);
             transform: scale(1.05);
         }
 
