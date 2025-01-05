@@ -146,30 +146,28 @@
 
  </section>
 <section id="contact">
-        <form id="form">
+        <form id="contact-form">
             <div class="input-box">
                 <span>Full Name</span>
                 <input type="text" name="from_name" placeholder="Enter Your Full Name" required>
             </div>
-            
+
             <div class="input-box">
                 <span>Your Email</span>
                 <input type="email" name="reply_to" placeholder="Enter Your Email" required>
             </div>
-            
+
             <div class="input-box">
                 <span>Your Message</span>
                 <textarea name="message" placeholder="Enter your message" required></textarea>
             </div>
-            
+
             <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
 
     <footer>
-        <div class="col-left">
-            <p>© 2024 Jaya Prakash Yadav Gorla's Portfolio. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Jaya Prakash Yadav Gorla's Portfolio. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -180,7 +178,7 @@
 
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const btn = this.querySelector('button');
             btn.disabled = true;
             btn.textContent = 'Sending...';
