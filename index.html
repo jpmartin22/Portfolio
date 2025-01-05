@@ -156,10 +156,11 @@
   </div>
   <div class="input-box">
     <span>Your Message Please</span>
-    <input type="text" name="message" placeholder="Enter your message" required>
+    <textarea name="message" placeholder="Enter your message" required></textarea>
   </div>
   <button type="submit" class="btn">Submit</button>
 </form>
+
 
 
   <!-- Include EmailJS SDK -->
@@ -167,14 +168,14 @@
 
   <script type="text/javascript">
     (function(){
-      emailjs.init("RQOVU0M74oqFK1cqU"); // Replace with your EmailJS user ID
+      emailjs.init("2mX8ihjioWvOLgcMs"); // Replace with your EmailJS user ID
     })();
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
       const serviceID = 'service_11c2jzf'; // Replace with your EmailJS service ID
-      const templateID = 'template_wct97ga'; // Replace with your EmailJS template ID
+      const templateID = 'template_xw9pdpv'; // Replace with your EmailJS template ID
 
       emailjs.sendForm(serviceID, templateID, this)
         .then(function(response) {
