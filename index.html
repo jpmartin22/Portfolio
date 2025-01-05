@@ -176,7 +176,13 @@
             btn.disabled = true;
             btn.textContent = 'Sending...';
 
-            emailjs.sendForm('service_11c2jzf', 'template_wct97ga', this)
+            // Add template parameters
+            const templateParams = {
+                to_email: 'jayaprakash.gorla@gmail.com',
+                ...Object.fromEntries(new FormData(this))
+            };
+
+            emailjs.send('service_11c2jzf', 'template_wct97ga', templateParams)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                     alert('Message sent successfully!');
