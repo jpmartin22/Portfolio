@@ -307,7 +307,7 @@ font-size:2em;
 min-width:10px;
 border-radius:0.5em;
 }
- #contact {
+#contact {
             background-color: var(--second-background);
             padding: 2em;
             min-height: 60vh;
@@ -346,18 +346,19 @@ border-radius:0.5em;
             font-size: 1em;
             padding: 0.8em;
             border-radius: 0.5em;
-            border: 1px solid #ccc;
+            border: 1px solid var(--input-border);
             outline: none;
             width: 100%;
             background-color: var(--input-bg);
-            color: #333;
+            color: var(--text-color);
             box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         form input:focus,
         form textarea:focus {
-            border-color: var(--btn-bg);
-            background-color: #fff;
+            border-color: var(--input-focus);
+            background-color: #1e293b;
         }
 
         form textarea {
@@ -372,13 +373,14 @@ border-radius:0.5em;
             border: none;
             outline: none;
             background: var(--btn-bg);
-            color: white;
+            color: var(--btn-text);
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
         .btn:hover {
             background: var(--btn-hover-bg);
+            transform: scale(1.05);
         }
 
         footer {
@@ -396,7 +398,6 @@ border-radius:0.5em;
         footer p {
             margin: 0;
         }
-
         .col-left {
             display: flex;
             flex-direction: column;
