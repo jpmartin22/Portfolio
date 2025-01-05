@@ -307,50 +307,83 @@ font-size:2em;
 min-width:10px;
 border-radius:0.5em;
 }
-#contact{
-background-color:var(--second-background)
-}
-form{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:2em;
-}
-form .input-box{
-display:flex;
-flex-direction:column;
-align-items:baseline;
-gap:1em;
-}
-.input-box span{
-font-size:1.5em;
-}
-form input{
-font-size:1.3em;
-padding:1em 5em;
-border-radius:0.5em;
-border:none;
-outline:none;
-}
-form input:focus{
-background:rgb(229,229,229);
-}
-footer{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10em;
-bottom:0;
-background-color:var(--background);
-width:100%;
-padding:2em 15%;
-}
-.col-left{
-display:flex;
-flex-direction:column;
-gap:1em;
-}
+#contact {
+            background-color: var(--second-background);
+            padding: 2em;
+            min-height: 80vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        form .input-box {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            gap: 1em;
+            width: 100%;
+        }
+
+        .input-box span {
+            font-size: 1.5em;
+        }
+
+        form input, 
+        form textarea {
+            font-size: 1.3em;
+            padding: 1em 5em;
+            border-radius: 0.5em;
+            border: none;
+            outline: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            background: rgb(229, 229, 229);
+        }
+
+        form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            font-size: 1.3em;
+            padding: 1em 5em;
+            border-radius: 0.5em;
+            border: none;
+            outline: none;
+            background: #4267B2;
+            color: white;
+            cursor: pointer;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10em;
+            bottom: 0;
+            background-color: var(--background);
+            width: 100%;
+            padding: 2em 15%;
+            box-sizing: border-box;
+        }
+
+        .col-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
 .col-box{
 display:flex;
 align-items:center;
