@@ -145,49 +145,88 @@
 
 
  </section>
-  <form id="contact-form">
-  <div class="input-box">
-    <span>Full Name</span>
-    <input type="text" name="fullName" placeholder="Enter Your Full Name" required>
-  </div>
-  <div class="input-box">
-    <span>Your Email</span>
-    <input type="email" name="email" placeholder="Enter Your Email" required>
-  </div>
-  <div class="input-box">
-    <span>Your Message Please</span>
-    <textarea name="message" placeholder="Enter your message" required></textarea>
-  </div>
-  <button type="submit" class="btn">Submit</button>
-</form>
+  <html>
+<head>
+    <style>
+        .input-box {
+            margin-bottom: 1rem;
+        }
+        .input-box span {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .input-box input,
+        .input-box textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form id="contact-form">
+        <div class="input-box">
+            <span>Full Name</span>
+            <input type="text" name="from_name" placeholder="Enter Your Full Name" required>
+        </div>
+        <div class="input-box">
+            <span>Your Email</span>
+            <input type="email" name="reply_to" placeholder="Enter Your Email" required>
+        </div>
+        <div class="input-box">
+            <span>Your Message</span>
+            <textarea name="message" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
 
+    <!-- Include EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init("2mX8ihjioWvOLgcMs");
+        })();
 
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
 
-  <!-- Include EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-  <script type="text/javascript">
-    (function(){
-      emailjs.init("2mX8ihjioWvOLgcMs"); // Replace with your EmailJS user ID
-    })();
-
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const serviceID = 'service_11c2jzf'; // Replace with your EmailJS service ID
-      const templateID = 'template_xw9pdpv'; // Replace with your EmailJS template ID
-
-      emailjs.sendForm(serviceID, templateID, this)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Your message has been sent!');
-        }, function(error) {
-          console.log('FAILED...', error);
-          alert('Failed to send your message. Please try again.');
+            // Send the email
+            emailjs.sendForm('service_11c2jzf', 'template_xw9pdpv', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Your message has been sent successfully!');
+                    document.getElementById('contact-form').reset();
+                })
+                .catch(function(error) {
+                    console.error('FAILED...', error);
+                    alert('Failed to send message. Please try again later.');
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                });
         });
-    });
-  </script>
-
+    </script>
+</body>
+</html>
 
 
   <footer>
