@@ -145,38 +145,32 @@
 
 
  </section>
-<form id="form" class="contact-form">
-        <div class="input-group">
-            <label>Full Name</label>
-            <input 
-                type="text" 
-                name="from_name" 
-                placeholder="Enter Your Full Name" 
-                required
-            >
-        </div>
+<section id="contact">
+        <form id="contact-form">
+            <div class="input-box">
+                <span>Full Name</span>
+                <input type="text" name="from_name" placeholder="Enter Your Full Name" required>
+            </div>
+            
+            <div class="input-box">
+                <span>Your Email</span>
+                <input type="email" name="reply_to" placeholder="Enter Your Email" required>
+            </div>
+            
+            <div class="input-box">
+                <span>Your Message</span>
+                <textarea name="message" placeholder="Enter your message" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
 
-        <div class="input-group">
-            <label>Your Email</label>
-            <input 
-                type="email" 
-                name="reply_to" 
-                placeholder="Enter Your Email" 
-                required
-            >
+    <footer>
+        <div class="col-left">
+            <p>© 2024 Your Portfolio. All rights reserved.</p>
         </div>
-
-        <div class="input-group">
-            <label>Your Message</label>
-            <textarea 
-                name="message" 
-                placeholder="Enter your message"
-                required
-            ></textarea>
-        </div>
-
-        <button type="submit" class="btn">Send Message</button>
-    </form>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
@@ -212,7 +206,6 @@
                 });
         });
     </script>
-
   <footer>
     <div class="col-left">
       <div class="col-box">
