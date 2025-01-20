@@ -107,13 +107,30 @@ justify-content:center;
 gap:3em;
 color:white;
 }
-#home img{
-width:18vw;
-height:18vw;
-border-radius:50%;
-margin-top:5em;
-
+#home img {
+  width: 15vw; /* Adjusted for better scaling */
+  height: 15vw;
+  border-radius: 50%; /* Keeps the circular shape */
+  margin-top: 5em;
+  border: 5px solid #f3f3f3; /* Adds a border for a polished look */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
+
+#home img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  #home img {
+    width: 25vw;
+    height: 25vw;
+    margin-top: 3em; /* Adjusted spacing for smaller screens */
+  }
+}
+
 .info-box{
 display:flex;
 flex-direction:column;
