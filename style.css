@@ -108,27 +108,18 @@ gap:3em;
 color:white;
 }
 #home img {
-  width: 15vw; /* Keeps a balanced size */
+  width: 15vw; /* Maintains a balanced size */
   height: 15vw;
-  border-radius: 50%; /* Circular style */
+  border-radius: 50%; /* Keeps the circular style */
   margin-top: 5em;
   border: 6px solid #ffffff; /* Clean white border for contrast */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Depth with shadow */
-  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth animations */
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth animations */
 }
 
 #home img:hover {
-  transform: scale(1.1); /* Adds a pop-out effect */
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4); /* Highlighted shadow on hover */
-}
-
-/* Responsive adjustments for smaller devices */
-@media (max-width: 768px) {
-  #home img {
-    width: 25vw;
-    height: 25vw;
-    margin-top: 3em;
-  }
+  transform: scale(1.3); /* Stronger zoom-in effect */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow during hover */
 }
 
 
