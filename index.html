@@ -1,237 +1,747 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jaya Prakash Yadav Gorla — AI/ML Engineer, LLMs &amp; RAG</title>
+    <meta name="description" content="AI/ML engineer in Chicago building LLM, RAG and multi-agent systems. AI Data Scientist at Taisho Systems on MCP Tutor. M.S. in AI, DePaul University.">
+    <link rel="canonical" href="https://jpmartin22.github.io/Portfolio/">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)">
+
+    <!-- Apply a saved or requested theme before first paint to avoid a flash. -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+        try {
+          var requested = new URLSearchParams(window.location.search).get("theme");
+          var theme = requested === "light" || requested === "dark" ? requested : window.localStorage.getItem("theme");
+          if (theme === "light" || theme === "dark") root.setAttribute("data-theme", theme);
+        } catch (error) {
+          /* Storage or URL parsing unavailable: fall back to the system theme. */
+        }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Jaya Prakash Yadav Gorla">
+    <meta property="og:title" content="Jaya Prakash Yadav Gorla — AI/ML Engineer">
+    <meta property="og:description" content="I build LLM, RAG and multi-agent systems. AI Data Scientist at Taisho Systems; M.S. in Artificial Intelligence, DePaul University.">
+    <meta property="og:url" content="https://jpmartin22.github.io/Portfolio/">
+    <meta property="og:image" content="https://jpmartin22.github.io/Portfolio/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Jaya Prakash Yadav Gorla, AI/ML engineer: LLM and RAG systems">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://jpmartin22.github.io/Portfolio/assets/og-image.jpg">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://jpmartin22.github.io/Portfolio/#person",
+        "name": "Jaya Prakash Yadav Gorla",
+        "jobTitle": "AI Data Scientist",
+        "worksFor": { "@type": "Organization", "name": "Taisho Systems" },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "DePaul University" },
+          { "@type": "CollegeOrUniversity", "name": "Siddharth Institute of Engineering & Technology" }
+        ],
+        "address": { "@type": "PostalAddress", "addressLocality": "Chicago", "addressRegion": "IL", "addressCountry": "US" },
+        "email": "mailto:jayaprakash.gorla@gmail.com",
+        "url": "https://jpmartin22.github.io/Portfolio/",
+        "image": "https://jpmartin22.github.io/Portfolio/assets/img/portrait-1000.jpg",
+        "sameAs": ["https://www.linkedin.com/in/jaya-prakash-yadav-ai", "https://github.com/jpmartin22"],
+        "knowsAbout": ["Large language models", "Retrieval-augmented generation", "Multi-agent systems", "Graph neural networks", "Reinforcement learning", "MLOps"]
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-  <nav>
-    <a href="#" class="logo"> <span>Jaya Prakash   </span></a>
+    <!-- Icon sprite (Lucide, ISC license; brand marks from Simple Icons, CC0) and shared diagram arrowhead. -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <defs>
+        <marker id="dg-arrow" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="dg-head" d="M0 .5 7 4 0 7.5z"/></marker>
+      </defs>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path class="fill" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path class="fill" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    </svg>
 
-    <ul class="links">
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      
-    </ul>
-    <i class='bx bx-menu-alt-right' id="menu" ></i>
+    <header class="site-header" data-menu="closed">
+      <div class="container header-inner">
+        <a class="brand" href="#top">
+          <span class="brand-long" aria-hidden="true">Jaya Prakash Yadav Gorla</span>
+          <span class="brand-short" aria-hidden="true">Jaya Prakash</span>
+          <span class="visually-hidden">Jaya Prakash Yadav Gorla, back to top</span>
+        </a>
 
+        <button class="icon-button menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <svg class="icon icon-open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+        </button>
 
-    <a href=  "#contact" class="btn">         Contact Me</a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <ul class="nav-list" role="list">
+            <li><a href="#projects"><span class="nav-num" aria-hidden="true">01</span>Projects</a></li>
+            <li><a href="#experience"><span class="nav-num" aria-hidden="true">02</span>Experience</a></li>
+            <li><a href="#about"><span class="nav-num" aria-hidden="true">03</span>About</a></li>
+            <li><a href="#contact"><span class="nav-num" aria-hidden="true">04</span>Contact</a></li>
+          </ul>
+        </nav>
 
-  </nav>
-
-  <section id="home">
-    <img src="Portfolio.JPG" alt="">
-
-    <div class="info-box">
-      <h1>Hello, I am Jaya Prakash Yadav,Gorla</h1>
-      <h3><span>Artificial Intelligence Grad student</span> at DePaul University,Chicago.</h3>
-
-      <p>My interests lie in the realms of machine learning, deep learning, natural language processing, and computer vision. I'm fascinated by how AI can transform industries and improve our daily lives.</p>
-    </div>
-    <div class="btn-box">
-      <a href="mailto:jayaprakash.gorla@gmail.com">
-        <div class="btn">Hire</div>
-      </a>
-      <a href="#contact">
-        <div class="btn">Contact Me</div>
-      </a>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h1 class="header"><span>Projects</span></h1>
-    <div class="projects-container">
-      <div class="project-box">
-        <img src="analysis-1841158.jpg" alt="Air Passenger Data Analysis">
-        <h2><span>Air Passenger Data Analysis:</span></h2>
-        <p>This project involves analyzing historical air passenger data to uncover trends and patterns. The analysis includes data cleaning, exploratory data analysis (EDA), and visualizations. Predictive models are also built to forecast future passenger numbers.Handling missing values and formatting data for analysis and Developing and validating models (e.g., time series forecasting) are the key components.</p>
-
-        <a href="https://github.com/jpmartin22/machine-Learning/tree/main/Projects/Air%20passenger%20data%20analysis" target="_blank">View Project</a>
+        <button class="icon-button theme-toggle" type="button" aria-pressed="false" aria-label="Dark theme">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
+        </button>
       </div>
-      <div class="project-box">
-        <img src="movie-theater-3001163.jpg" alt="Movies Recommender">
-        <h2><span>Movies Recommender:</span></h2>
-        <p>This project involves developing a movie recommendation system using various algorithms and data inputs. Techniques such as collaborative filtering, content-based filtering, or hybrid methods are used to provide personalized movie recommendations.</p>
-        <a href="https://github.com/jpmartin22/machine-Learning/tree/main/Projects/Movies%20Recomender" target="_blank">View Project</a>
-      </div>
-      <div class="project-box">
-        <img src="ship-1366926.jpg" alt="Titanic Data Analysis">
-        <h2><span>Titanic Data Analysis:</span></h2>
-        <p>In this project, I conducted an in-depth analysis of the Titanic dataset to explore patterns and correlations related to passenger survival. The analysis involved data cleaning, feature engineering, and visualization to better understand the factors that influenced survival rates.</p>
-        <a href="https://github.com/jpmartin22/machine-Learning/tree/main/Projects/Titanic%20data%20analysis" target="_blank">View Project</a>
-      </div>
-      <div class="project-box">
-        <img src="gears-4126485.jpg" alt="Internship Automation Project">
-        <h2><span>Internship Automation Project:</span></h2>
-        <p>An automation project developed during an internship at Cognizant to navigate their help portal, GSD.</p>
-        <a href="https://github.com/jpmartin22/Automation-project-on-GSD-navigation-in-cognizant" target="_blank">View Project</a>
-      </div>
-      <div class="project-box">
-        <img src="wheelchair-1327822.jpg" alt="Stephen Hawking Wheelchair Controlled by MEMS Motion">
-        <h2><span>Stephen Hawking Wheelchair Controlled by MEMS Motion:</span></h2>
-        <p>A Bachelor of Technology project aimed at developing a wheelchair control system for physically disabled individuals using hand gestures and acceleration technology.</p>
-        <a href="https://github.com/jpmartin22/STEPHEN-HAWKING-WHEELCHAIR-CONTROLLED-BY-USING-MEMS-MOTION" target="_blank">View Project</a>
-      </div>
-      <div class="project-box">
-        <img src="lock-1929089.jpg" alt="Password Based Door Lock Using Arduino">
-        <h2><span>Password Based Door Lock Using Arduino:</span></h2>
-        <p>A security project focused on developing a door lock system controlled by passwords, using Arduino.</p>
-        <a href="https://github.com/jpmartin22/PASSWORD-BASED-DOORLOCK-SYSTEM-USING-ARDUINO" target="_blank">View Project</a>
-      </div>
-    </div>
-  </section>
-  
+    </header>
 
-  
+    <main id="main" tabindex="-1">
+      <section class="hero" id="top" aria-labelledby="hero-name">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">AI/ML Engineer · Chicago, IL</p>
+            <h1 class="display" id="hero-name">Jaya Prakash Yadav Gorla</h1>
+            <p class="hero-lede">I build LLM, RAG and multi-agent systems, from data pipelines and fine-tuning to evaluation and deployment.</p>
+            <dl class="hero-facts">
+              <div>
+                <dt>Now</dt>
+                <dd>AI Data Scientist at Taisho Systems, building AI features for <a href="https://www.mcptutor.com/">MCP Tutor</a>, an AI learning platform</dd>
+              </div>
+              <div>
+                <dt>Education</dt>
+                <dd>M.S. Artificial Intelligence, DePaul University (2026)</dd>
+              </div>
+            </dl>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">
+                View projects
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-down"/></svg>
+              </a>
+              <a class="btn btn-secondary" href="#contact">Get in touch</a>
+            </div>
+            <ul class="hero-links" role="list">
+              <li>
+                <a href="https://www.linkedin.com/in/jaya-prakash-yadav-ai">
+                  <svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#i-linkedin"/></svg>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/jpmartin22">
+                  <svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#i-github"/></svg>
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </div>
 
-  <section id="about">
+          <figure class="hero-portrait">
+            <picture>
+              <source media="(max-width: 39.99em)" type="image/avif" srcset="assets/img/portrait-tight-600.avif 600w, assets/img/portrait-tight-1100.avif 1100w" sizes="min(18rem, calc(100vw - 2rem))">
+              <source media="(max-width: 39.99em)" type="image/jpeg" srcset="assets/img/portrait-tight-600.jpg 600w" sizes="min(18rem, calc(100vw - 2rem))">
+              <source type="image/avif" srcset="assets/img/portrait-600.avif 600w, assets/img/portrait-1200.avif 1200w" sizes="(min-width: 64em) 23rem, 22rem">
+              <img src="assets/img/portrait-600.jpg" srcset="assets/img/portrait-600.jpg 600w, assets/img/portrait-1000.jpg 1000w" sizes="(min-width: 64em) 23rem, 22rem" width="600" height="750" alt="Jaya Prakash Yadav Gorla in a navy suit, walking across a footbridge" fetchpriority="high" decoding="async">
+            </picture>
+          </figure>
+        </div>
+      </section>
 
-
-    <div class="about-box">
-      <div class="about-info">
-        <h1><span>About Me</span></h1>
-        <p>I'm currently learning Machine learning.Previously i had work experience in cognizant for 2 years on SAP.Apart from my academic pursuits, I enjoy contributing to open-source projects and collaborating with fellow developers and researchers.My tech stack includes Python, Numpy, and more. I'm always eager to learn new technologies and frameworks.I'm looking to connect with like-minded individuals and explore opportunities in AI research and development.Let's build the future with AI!</p>
-
-      </div>
-      <h2><span>Skills</span></h2>
-      <div class="Skills">
-        <ul>
+      <section class="ledger" aria-label="Highlights">
+        <ul class="container ledger-list" role="list">
           <li>
-            <span>
-              <i class='bx bx-chevron-right' ></i>Python
-            </span>
+            <span class="ledger-value">10,000+</span>
+            <span class="ledger-label">daily queries, legal RAG system I deployed</span>
           </li>
           <li>
-            <span>
-              <i class='bx bx-chevron-right' ></i>Java
-            </span>
+            <span class="ledger-value">85%</span>
+            <span class="ledger-label">less manual processing, 100,000+ records automated</span>
           </li>
           <li>
-            <span>
-              <i class='bx bx-chevron-right' ></i>Machine Learning
-            </span>
+            <span class="ledger-value">96%</span>
+            <span class="ledger-label">of RAG answers rated 4 or 5 out of 5 by an LLM judge</span>
           </li>
           <li>
-            <span>
-              <i class='bx bx-chevron-right' ></i>HTML,CSS and JavaScript
-            </span>
+            <span class="ledger-value">86.4%</span>
+            <span class="ledger-label">lane-keeping, Dreamer-style driving agent</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <header class="section-head">
+            <h2 class="section-title" id="projects-title"><span class="section-num" aria-hidden="true">01</span>Projects</h2>
+            <p class="section-intro">Open “How it works” on a project for its architecture and how each result was measured.</p>
+          </header>
+
+          <div class="index-head" aria-hidden="true">
+            <span>No.</span><span>Project</span><span>Result</span><span>Stack</span>
+          </div>
+
+          <ol class="project-index" role="list">
+            <li>
+              <article class="project" id="project-mediquery" aria-labelledby="project-mediquery-title">
+                <span class="project-num" aria-hidden="true">01</span>
+                <div class="project-main">
+                  <h3 class="project-title" id="project-mediquery-title">MediQuery<span class="visually-hidden">:</span> <span class="project-kind">Multi-agent medical QA</span></h3>
+                  <p class="project-context">2026 · Co-authored with Kunal Tamhane</p>
+                  <p class="project-summary">Medical question answering that stops instead of guessing when no source comes back.</p>
+                  <p class="badge">Manuscript in preparation</p>
+                  <details class="project-details">
+                    <summary>
+                      <svg class="icon icon-toggle" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path class="toggle-v" d="M12 5v14"/></svg>
+                      How it works<span class="visually-hidden"> for MediQuery</span>
+                    </summary>
+                    <dl class="par">
+                      <div>
+                        <dt>Problem</dt>
+                        <dd>Language models answer medical questions confidently even when no evidence supports the answer.</dd>
+                      </div>
+                      <div>
+                        <dt>Approach</dt>
+                        <dd>A LangGraph supervisor orchestrates three retrieval agents (PubMedBERT embeddings in Qdrant, NCBI, web search), and answers are generated through Amazon Bedrock. We also fine-tuned Llama 3 8B with 4-bit QLoRA on PubMedQA. A circuit breaker returns an insufficient-evidence reply instead of guessing when no agent finds a source.</dd>
+                      </div>
+                      <div>
+                        <dt>Evaluation</dt>
+                        <dd>Pilot: the full pipeline scored 0.92 BERTScore-F1 on 5 PubMedQA questions.</dd>
+                      </div>
+                    </dl>
+                    <figure class="diagram-figure">
+                      <svg class="diagram" viewBox="0 0 360 306" role="img" aria-labelledby="dg-mq-title dg-mq-desc">
+                        <title id="dg-mq-title">MediQuery architecture</title>
+                        <desc id="dg-mq-desc">A medical question goes to a LangGraph supervisor, which queries three retrieval agents: PubMedBERT with Qdrant, NCBI, and web search. A circuit breaker then either returns an insufficient-evidence reply when no source was found, or lets Amazon Bedrock generate an answer with sources.</desc>
+                        <rect class="dg-box" x="110" y="6" width="140" height="30" rx="4"/>
+                        <text class="dg-text" x="180" y="25" text-anchor="middle">Medical question</text>
+                        <path class="dg-line" d="M180 36V57" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="80" y="58" width="200" height="36" rx="4"/>
+                        <text class="dg-text" x="180" y="80" text-anchor="middle">LangGraph supervisor</text>
+                        <path class="dg-line" d="M180 94V107M60 107H300"/>
+                        <path class="dg-line" d="M60 107V119" marker-end="url(#dg-arrow)"/>
+                        <path class="dg-line" d="M180 107V119" marker-end="url(#dg-arrow)"/>
+                        <path class="dg-line" d="M300 107V119" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="6" y="120" width="108" height="48" rx="4"/>
+                        <text class="dg-text" x="60" y="141" text-anchor="middle">PubMedBERT</text>
+                        <text class="dg-sub" x="60" y="157" text-anchor="middle">+ Qdrant</text>
+                        <rect class="dg-box" x="126" y="120" width="108" height="48" rx="4"/>
+                        <text class="dg-text" x="180" y="149" text-anchor="middle">NCBI</text>
+                        <rect class="dg-box" x="246" y="120" width="108" height="48" rx="4"/>
+                        <text class="dg-text" x="300" y="149" text-anchor="middle">Web search</text>
+                        <path class="dg-line" d="M60 168V181M180 168V181M300 168V181M60 181H300"/>
+                        <path class="dg-line" d="M180 181V193" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="60" y="194" width="240" height="36" rx="4"/>
+                        <text class="dg-text" x="180" y="216" text-anchor="middle">Circuit breaker</text>
+                        <path class="dg-line" d="M180 230V243M90 243H270"/>
+                        <path class="dg-line" d="M90 243V255" marker-end="url(#dg-arrow)"/>
+                        <path class="dg-line" d="M270 243V255" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="6" y="256" width="168" height="44" rx="4"/>
+                        <text class="dg-text" x="90" y="274" text-anchor="middle">Insufficient-evidence</text>
+                        <text class="dg-sub" x="90" y="290" text-anchor="middle">reply (no source)</text>
+                        <rect class="dg-box" x="186" y="256" width="168" height="44" rx="4"/>
+                        <text class="dg-text" x="270" y="274" text-anchor="middle">Answer with sources</text>
+                        <text class="dg-sub" x="270" y="290" text-anchor="middle">generated via Bedrock</text>
+                      </svg>
+                      <figcaption>Simplified architecture.</figcaption>
+                    </figure>
+                  </details>
+                </div>
+                <div class="project-result">
+                  <span class="cell-label">Result</span>
+                  <p class="result-value">3 retrieval agents + circuit breaker</p>
+                </div>
+                <div class="project-meta">
+                  <span class="cell-label">Stack</span>
+                  <ul class="chips" role="list">
+                    <li>LangGraph</li><li>Amazon Bedrock</li><li>Qdrant</li><li>PubMedBERT</li><li>Llama 3 8B</li><li>QLoRA</li>
+                  </ul>
+                  <ul class="project-links" role="list">
+                    <li><a href="#contact" data-topic="MediQuery">Ask me about MediQuery</a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="project" id="project-aml" aria-labelledby="project-aml-title">
+                <span class="project-num" aria-hidden="true">02</span>
+                <div class="project-main">
+                  <h3 class="project-title" id="project-aml-title">Multimodal AML detection<span class="visually-hidden">:</span> <span class="project-kind">Graph ML for anti-money laundering</span></h3>
+                  <p class="project-context">2025–26 · DePaul MLOps course, team of 4</p>
+                  <p class="project-summary">Flags money laundering by fusing a transaction graph, behavioral sequences and synthetic payment-memo text.</p>
+                  <p class="project-role">On a 4-person team, I owned the GraphSAGE encoder, late-fusion head and SHAP explanations.</p>
+                  <details class="project-details">
+                    <summary>
+                      <svg class="icon icon-toggle" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path class="toggle-v" d="M12 5v14"/></svg>
+                      How it works<span class="visually-hidden"> for Multimodal AML detection</span>
+                    </summary>
+                    <dl class="par">
+                      <div>
+                        <dt>Problem</dt>
+                        <dd>Laundering signals are spread across transaction networks, payment text and account behavior, so any single signal misses some of them.</dd>
+                      </div>
+                      <div>
+                        <dt>Approach</dt>
+                        <dd>Three encoders (GraphSAGE, BiLSTM, DistilBERT) feed a late-fusion MLP with Platt calibration and SHAP explanations. The team shipped it with MLflow, DVC, Docker and a Cloud Run CI/CD pipeline.</dd>
+                      </div>
+                      <div>
+                        <dt>Evaluation</dt>
+                        <dd>Elliptic Bitcoin graph (203,769 transactions, 46,564 labeled). Test AUC-PR: GraphSAGE 0.93; GraphSAGE + BiLSTM 0.947; adding DistilBERT on synthetic memos 0.9975, against 0.989 for an XGBoost baseline on tabular features. The memos are generated from each transaction's label, so the fused score shows the pipeline works end to end, not real-world accuracy. Halving the GraphSAGE hidden size (256 to 128) made epochs 1.92× faster (0.69 s to 0.36 s); the 0.93 model uses 256.</dd>
+                      </div>
+                    </dl>
+                    <figure class="diagram-figure">
+                      <svg class="diagram" viewBox="0 0 360 270" role="img" aria-labelledby="dg-aml-title dg-aml-desc">
+                        <title id="dg-aml-title">Multimodal AML architecture</title>
+                        <desc id="dg-aml-desc">Three encoders feed a late-fusion MLP: GraphSAGE on the transaction graph, a BiLSTM on behavior sequences, and DistilBERT on synthetic payment memos. The fused output is calibrated with Platt scaling to give a risk score, and SHAP explanations accompany it. The GraphSAGE encoder, the fusion MLP and the SHAP explanations are the parts I built.</desc>
+                        <rect class="dg-box dg-mine" x="4" y="6" width="112" height="50" rx="4"/>
+                        <text class="dg-text dg-text-sm" x="60" y="26" text-anchor="middle">Transaction graph</text>
+                        <text class="dg-sub" x="60" y="44" text-anchor="middle">GraphSAGE</text>
+                        <rect class="dg-box" x="124" y="6" width="112" height="50" rx="4"/>
+                        <text class="dg-text dg-text-sm" x="180" y="26" text-anchor="middle">Behavior sequences</text>
+                        <text class="dg-sub" x="180" y="44" text-anchor="middle">BiLSTM</text>
+                        <rect class="dg-box" x="244" y="6" width="112" height="50" rx="4"/>
+                        <text class="dg-text dg-text-sm" x="300" y="26" text-anchor="middle">Synthetic memos</text>
+                        <text class="dg-sub" x="300" y="44" text-anchor="middle">DistilBERT</text>
+                        <path class="dg-line" d="M60 56V70M180 56V70M300 56V70M60 70H300"/>
+                        <path class="dg-line" d="M180 70V83" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box dg-mine" x="60" y="84" width="240" height="34" rx="4"/>
+                        <text class="dg-text" x="180" y="105" text-anchor="middle">Late-fusion MLP</text>
+                        <path class="dg-line" d="M180 118V141" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="60" y="142" width="240" height="34" rx="4"/>
+                        <text class="dg-text" x="180" y="163" text-anchor="middle">Platt calibration</text>
+                        <path class="dg-line" d="M180 176V188M90 188H270"/>
+                        <path class="dg-line" d="M90 188V199" marker-end="url(#dg-arrow)"/>
+                        <path class="dg-line" d="M270 188V199" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="20" y="200" width="140" height="34" rx="4"/>
+                        <text class="dg-text" x="90" y="221" text-anchor="middle">Risk score</text>
+                        <rect class="dg-box dg-mine" x="200" y="200" width="140" height="34" rx="4"/>
+                        <text class="dg-text" x="270" y="221" text-anchor="middle">SHAP explanations</text>
+                        <text class="dg-sub" x="180" y="258" text-anchor="middle">Blue outline: the parts I built</text>
+                      </svg>
+                      <figcaption>Simplified architecture.</figcaption>
+                    </figure>
+                  </details>
+                </div>
+                <div class="project-result">
+                  <span class="cell-label">Result</span>
+                  <p class="result-value">0.93 AUC-PR <span class="result-note">my GraphSAGE branch, Elliptic Bitcoin graph</span></p>
+                </div>
+                <div class="project-meta">
+                  <span class="cell-label">Stack</span>
+                  <ul class="chips" role="list">
+                    <li>PyTorch Geometric</li><li>DistilBERT</li><li>BiLSTM</li><li>SHAP</li><li>MLflow</li><li>DVC</li><li>Docker</li><li>Cloud Run</li>
+                  </ul>
+                  <ul class="project-links" role="list">
+                    <li><a href="https://github.com/jpmartin22/Multimodal_Anti_Money_Laundering"><span>Code<span class="visually-hidden"> for Multimodal AML detection on GitHub</span></span><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a></li>
+                    <li><a href="https://youtu.be/J4DRJv57-SM"><span>Team demo video<span class="visually-hidden"> on YouTube</span></span><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="project" id="project-tiny-dreamer" aria-labelledby="project-tiny-dreamer-title">
+                <span class="project-num" aria-hidden="true">03</span>
+                <div class="project-main">
+                  <h3 class="project-title" id="project-tiny-dreamer-title">Tiny Dreamer<span class="visually-hidden">:</span> <span class="project-kind">World-model RL for driving</span></h3>
+                  <p class="project-context">2026 · DePaul course project</p>
+                  <p class="project-summary">A Dreamer-style agent that learns to drive inside its own imagined rollouts on highway-env.</p>
+                  <details class="project-details">
+                    <summary>
+                      <svg class="icon icon-toggle" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path class="toggle-v" d="M12 5v14"/></svg>
+                      How it works<span class="visually-hidden"> for Tiny Dreamer</span>
+                    </summary>
+                    <dl class="par">
+                      <div>
+                        <dt>Problem</dt>
+                        <dd>Learning to drive from pixels with model-free RL takes a large number of real environment steps.</dd>
+                      </div>
+                      <div>
+                        <dt>Approach</dt>
+                        <dd>Built from scratch in PyTorch: a CNN encoder, an RSSM world model and an actor-critic trained on imagined rollouts, with CAPS smoothness regularization. Trained on about 184K agent steps.</dd>
+                      </div>
+                      <div>
+                        <dt>Evaluation</dt>
+                        <dd>Best checkpoint (cycle 20, 10 episodes): 86.4% lane-keeping, measured as the share of time on the road. Final policy over 20 episodes: 79.6% lane-keeping, off-road rate 20.4% against 32.7% for a random policy.</dd>
+                      </div>
+                    </dl>
+                    <figure class="diagram-figure">
+                      <svg class="diagram" viewBox="0 0 360 324" role="img" aria-labelledby="dg-td-title dg-td-desc">
+                        <title id="dg-td-title">Tiny Dreamer architecture</title>
+                        <desc id="dg-td-desc">A 64 by 64 camera frame passes through a CNN encoder into an RSSM world model with a 512-unit GRU state and a 32-dimensional stochastic state. Twenty-step imagined rollouts in that latent space train an actor-critic, which outputs steering and acceleration.</desc>
+                        <rect class="dg-box" x="75" y="6" width="210" height="32" rx="4"/>
+                        <text class="dg-text" x="180" y="26" text-anchor="middle">64×64 frame</text>
+                        <path class="dg-line" d="M180 38V55" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="75" y="56" width="210" height="32" rx="4"/>
+                        <text class="dg-text" x="180" y="76" text-anchor="middle">CNN encoder</text>
+                        <path class="dg-line" d="M180 88V105" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="75" y="106" width="210" height="48" rx="4"/>
+                        <text class="dg-text" x="180" y="127" text-anchor="middle">RSSM world model</text>
+                        <text class="dg-sub" x="180" y="143" text-anchor="middle">GRU 512 + 32 stochastic</text>
+                        <path class="dg-line" d="M180 154V171" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="75" y="172" width="210" height="48" rx="4"/>
+                        <text class="dg-text" x="180" y="193" text-anchor="middle">Imagined rollouts</text>
+                        <text class="dg-sub" x="180" y="209" text-anchor="middle">20 steps in latent space</text>
+                        <path class="dg-line" d="M180 220V237" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="75" y="238" width="210" height="32" rx="4"/>
+                        <text class="dg-text" x="180" y="258" text-anchor="middle">Actor-critic</text>
+                        <path class="dg-line" d="M180 270V287" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="75" y="288" width="210" height="30" rx="4"/>
+                        <text class="dg-text" x="180" y="307" text-anchor="middle">Steer and accelerate</text>
+                      </svg>
+                      <figcaption>Simplified architecture.</figcaption>
+                    </figure>
+                  </details>
+                </div>
+                <div class="project-result">
+                  <span class="cell-label">Result</span>
+                  <p class="result-value">86.4% lane-keeping <span class="result-note">share of time on the road, best checkpoint, 10 episodes</span></p>
+                </div>
+                <div class="project-meta">
+                  <span class="cell-label">Stack</span>
+                  <ul class="chips" role="list">
+                    <li>PyTorch</li><li>highway-env</li><li>Gymnasium</li><li>RSSM</li><li>Actor-critic</li><li>CAPS</li>
+                  </ul>
+                  <ul class="project-links" role="list">
+                    <li><a href="https://github.com/jpmartin22/TinyDreamer"><span>Code<span class="visually-hidden"> for Tiny Dreamer on GitHub</span></span><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a></li>
+                    <li><a href="https://github.com/jpmartin22/TinyDreamer/blob/main/Tiny_Dreamer_Report_Jaya.pdf"><span>Report<span class="visually-hidden"> for Tiny Dreamer</span> (PDF)</span><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="project" id="project-agentic-rag" aria-labelledby="project-agentic-rag-title">
+                <span class="project-num" aria-hidden="true">04</span>
+                <div class="project-main">
+                  <h3 class="project-title" id="project-agentic-rag-title">Agentic RAG<span class="visually-hidden">:</span> <span class="project-kind">Cleantech research Q&amp;A</span></h3>
+                  <p class="project-context">2025 · DePaul NLP course project</p>
+                  <p class="project-summary">A tool-using research agent over 20,000+ cleantech articles, with a guardrail that reviews its answers.</p>
+                  <details class="project-details">
+                    <summary>
+                      <svg class="icon icon-toggle" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path class="toggle-v" d="M12 5v14"/></svg>
+                      How it works<span class="visually-hidden"> for Agentic RAG</span>
+                    </summary>
+                    <dl class="par">
+                      <div>
+                        <dt>Problem</dt>
+                        <dd>Cleantech research questions often need several documents plus current scholarly sources to answer well.</dd>
+                      </div>
+                      <div>
+                        <dt>Approach</dt>
+                        <dd>A LangChain tool-calling agent (GPT-4o mini) over a ChromaDB index of 20,111 documents (133,458 chunks). I extended a baseline agent (retriever and summarizer) with an OpenAlex scholarly-search tool and an answer-review guardrail.</dd>
+                      </div>
+                      <div>
+                        <dt>Evaluation</dt>
+                        <dd>A GPT-4o mini judge (the same model the agent runs on) scored 50 benchmark answers against reference answers: 44 rated 4 of 5, 4 rated 5 of 5, and 2 rated 3. On 23 questions, ROUGE-L F1 rose from 0.104 to 0.126 once the baseline gained OpenAlex search and the guardrail.</dd>
+                      </div>
+                    </dl>
+                    <figure class="diagram-figure">
+                      <svg class="diagram" viewBox="0 0 360 262" role="img" aria-labelledby="dg-rag-title dg-rag-desc">
+                        <title id="dg-rag-title">Agentic RAG architecture</title>
+                        <desc id="dg-rag-desc">A question goes to a tool-using GPT-4o mini agent, which calls three tools and receives their results: a ChromaDB retriever over 133,458 chunks, a summarizer, and OpenAlex scholarly search. An answer-review guardrail then accepts or revises the agent's answer before it is returned.</desc>
+                        <rect class="dg-box" x="4" y="6" width="150" height="30" rx="4"/>
+                        <text class="dg-text" x="79" y="25" text-anchor="middle">Question</text>
+                        <path class="dg-line" d="M79 36V61" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="4" y="62" width="150" height="48" rx="4"/>
+                        <text class="dg-text" x="79" y="83" text-anchor="middle">Tool-using agent</text>
+                        <text class="dg-sub" x="79" y="99" text-anchor="middle">GPT-4o mini</text>
+                        <path class="dg-line" d="M79 110V143" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="4" y="144" width="150" height="48" rx="4"/>
+                        <text class="dg-text" x="79" y="165" text-anchor="middle">Answer review</text>
+                        <text class="dg-sub" x="79" y="181" text-anchor="middle">accept or revise</text>
+                        <path class="dg-line" d="M79 192V225" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="4" y="226" width="150" height="30" rx="4"/>
+                        <text class="dg-text" x="79" y="245" text-anchor="middle">Answer</text>
+                        <path class="dg-line" d="M154 86H180V36H205" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+                        <path class="dg-line" d="M154 86H205" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+                        <path class="dg-line" d="M154 86H180V136H205" marker-start="url(#dg-arrow)" marker-end="url(#dg-arrow)"/>
+                        <rect class="dg-box" x="206" y="14" width="150" height="44" rx="4"/>
+                        <text class="dg-text" x="281" y="33" text-anchor="middle">Retriever</text>
+                        <text class="dg-sub" x="281" y="49" text-anchor="middle">ChromaDB, 133,458 chunks</text>
+                        <rect class="dg-box" x="206" y="64" width="150" height="44" rx="4"/>
+                        <text class="dg-text" x="281" y="91" text-anchor="middle">Summarizer</text>
+                        <rect class="dg-box" x="206" y="114" width="150" height="44" rx="4"/>
+                        <text class="dg-text" x="281" y="141" text-anchor="middle">OpenAlex search</text>
+                      </svg>
+                      <figcaption>Simplified architecture.</figcaption>
+                    </figure>
+                  </details>
+                </div>
+                <div class="project-result">
+                  <span class="cell-label">Result</span>
+                  <p class="result-value">96% of answers rated 4 or 5 of 5 <span class="result-note">GPT-4o mini judge, 50 questions</span></p>
+                  <p class="result-value">+21% ROUGE-L F1 <span class="result-note">vs the baseline agent, 23 questions</span></p>
+                </div>
+                <div class="project-meta">
+                  <span class="cell-label">Stack</span>
+                  <ul class="chips" role="list">
+                    <li>LangChain</li><li>ChromaDB</li><li>GPT-4o mini</li><li>sentence-transformers</li><li>OpenAlex API</li>
+                  </ul>
+                  <ul class="project-links" role="list">
+                    <li><a href="https://github.com/jpmartin22/Multi-Tool-Agentic-RAG/blob/main/CSC_583_Project_RAG%20Agent_Report_Jaya.pdf"><span>Report<span class="visually-hidden"> for Agentic RAG</span> (PDF)</span><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a></li>
+                    <li><a href="https://github.com/jpmartin22/Multi-Tool-Agentic-RAG"><span>Code<span class="visually-hidden"> for Agentic RAG on GitHub</span></span><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a></li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+          </ol>
+
+          <div class="also">
+            <h3 class="block-title">Also built</h3>
+            <ul class="also-list" role="list">
+              <li class="also-item">
+                <p class="also-title">Robotics coursework: control, planning and estimation <span class="also-tag">2026 · DePaul course</span></p>
+                <p class="also-desc">PID control in Drake and MeshCat, direct-transcription trajectory optimization, Kalman filtering, RRT and GCS-inspired planners, and a SAC agent on MuJoCo HalfCheetah.</p>
+              </li>
+              <li class="also-item">
+                <p class="also-title">Airbnb price prediction <span class="also-tag">2025 · group project</span></p>
+                <p class="also-desc">48,895 New York City listings: temporal and geospatial features, LightGBM and XGBoost models, SHAP explanations and a borough-level fairness check.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="experience" aria-labelledby="experience-title">
+        <div class="container">
+          <header class="section-head">
+            <h2 class="section-title" id="experience-title"><span class="section-num" aria-hidden="true">02</span>Experience</h2>
+          </header>
+
+          <ol class="roles" role="list">
+            <li class="role">
+              <p class="role-dates"><time datetime="2026-09">Sep 2026</time> – Present</p>
+              <div class="role-body">
+                <h3 class="role-title"><span class="role-org">Taisho Systems</span><span class="visually-hidden">,</span> <span class="role-name">AI Data Scientist</span></h3>
+                <p class="role-meta">Wisconsin, USA · <a href="https://www.mcptutor.com/">mcptutor.com</a></p>
+                <ul class="role-points">
+                  <li>Build AI and data science features for MCP Tutor, an AI learning platform delivered to AI assistants through the Model Context Protocol.</li>
+                  <li>Support client projects with AI and data science solutions.</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="role">
+              <p class="role-dates"><time datetime="2025-06">Jun 2025</time> – <time datetime="2026-09">Sep 2026</time></p>
+              <div class="role-body">
+                <h3 class="role-title"><span class="role-org">DePaul University</span><span class="visually-hidden">,</span> <span class="role-name">Data Scientist</span></h3>
+                <p class="role-meta">Chicago, IL</p>
+                <ul class="role-points">
+                  <li>Cut manual processing time by 85% by automating ingestion of 100,000+ JSONL records across 3 research projects.</li>
+                  <li>Designed innovation metrics and NetworkX centrality models to evaluate 50,000+ biopharma patents, identifying 5 innovation hubs and 3 emerging clusters; findings supported 2 funded grant proposals.</li>
+                  <li>Raised insight-extraction efficiency by 40% and cut analysis errors by 30% by standardizing PCA and temporal-analytics pipelines across 3 multi-year studies.</li>
+                </ul>
+                <ul class="chips" role="list">
+                  <li>Python</li><li>SQL</li><li>Semantic ETL</li><li>NetworkX</li><li>PCA</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="role">
+              <p class="role-dates"><time datetime="2025-06">Jun 2025</time> – <time datetime="2025-08">Aug 2025</time></p>
+              <div class="role-body">
+                <h3 class="role-title"><span class="role-org">AriesView</span><span class="visually-hidden">,</span> <span class="role-name">AI Research Intern</span></h3>
+                <p class="role-meta">Boston, MA</p>
+                <ul class="role-points">
+                  <li>With legal experts and 2 engineers, built and deployed an OCR-based RAG system processing 1,000+ legal documents a week, a 40% accuracy gain.</li>
+                  <li>Added vector search with metadata filtering, reaching 85% accuracy (F1 0.83) and cutting manual review time by 60% for 5 reviewers.</li>
+                  <li>Tuned PostgreSQL vector indexes and CI/CD pipelines, cutting query latency by 25% while scaling to 10,000+ daily queries.</li>
+                </ul>
+                <ul class="chips" role="list">
+                  <li>LangChain</li><li>FAISS</li><li>PaddleOCR</li><li>PostgreSQL</li><li>CI/CD</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="role">
+              <p class="role-dates"><time datetime="2022-10">Oct 2022</time> – <time datetime="2024-01">Jan 2024</time></p>
+              <div class="role-body">
+                <h3 class="role-title"><span class="role-org">Cognizant</span><span class="visually-hidden">,</span> <span class="role-name">Junior Data Scientist</span></h3>
+                <p class="role-meta">India</p>
+                <ul class="role-points">
+                  <li>Lifted predictive model accuracy by 35% across 2 business initiatives with feature pipelines built on 200+ complex SQL queries.</li>
+                  <li>Promoted from trainee after exceeding performance baselines by 20%.</li>
+                  <li>Led end-to-end model validation and release coordination across data and engineering teams, with zero failed production deployments.</li>
+                </ul>
+                <ul class="chips" role="list">
+                  <li>SQL</li><li>Feature engineering</li><li>Model validation</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container about-grid">
+          <header class="section-head">
+            <h2 class="section-title" id="about-title"><span class="section-num" aria-hidden="true">03</span>About</h2>
+          </header>
+
+          <div class="about-text">
+            <p>I'm an AI/ML engineer with 3 years of industry and research experience, across data science, RAG and multi-agent systems.</p>
+            <p>I like working where research meets engineering: taking an approach that works in a notebook and turning it into a system with clear evaluation behind it.</p>
+          </div>
+
+          <div class="about-skills">
+            <h3 class="block-title">Skills</h3>
+            <dl class="skills">
+              <div>
+                <dt>Languages</dt>
+                <dd>Python, SQL, C++, Bash</dd>
+              </div>
+              <div>
+                <dt>GenAI &amp; LLMs</dt>
+                <dd>RAG, multi-agent systems, LangChain, LangGraph, LlamaIndex, Hugging Face Transformers, LoRA/QLoRA fine-tuning, prompt engineering, LLM evaluation, FAISS, ChromaDB, Qdrant</dd>
+              </div>
+              <div>
+                <dt>Machine learning</dt>
+                <dd>PyTorch, TensorFlow, scikit-learn, XGBoost, LightGBM, GNNs (GraphSAGE), BERT-family models, OpenCV, reinforcement learning</dd>
+              </div>
+              <div>
+                <dt>MLOps &amp; cloud</dt>
+                <dd>Docker, Kubernetes, MLflow, DVC, GitHub Actions CI/CD, FastAPI, PostgreSQL, AWS (Bedrock, SageMaker), GCP (Vertex AI, Cloud Run), Azure AI</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="about-edu">
+            <h3 class="block-title">Education</h3>
+            <ul class="plain-list" role="list">
+              <li>
+                <p class="item-title">DePaul University</p>
+                <p class="item-meta">M.S., Artificial Intelligence · Chicago, IL · <span class="nowrap">2024–2026</span></p>
+              </li>
+              <li>
+                <p class="item-title">Siddharth Institute of Engineering &amp; Technology</p>
+                <p class="item-meta">B.Tech, Electrical, Electronics and Communications Engineering · Puttur, India · <span class="nowrap">2018–2022</span></p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-certs">
+            <h3 class="block-title">Certifications &amp; courses</h3>
+            <ul class="plain-list" role="list">
+              <li><p class="item-title">Google Cloud Gen AI Professional</p></li>
+              <li><p class="item-title">Hugging Face AI Agents Fundamentals</p></li>
+              <li><p class="item-title">AWS Educate Machine Learning Foundations</p></li>
+              <li><p class="item-title">AWS Educate Introduction to Generative AI</p></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-intro">
+            <h2 class="section-title" id="contact-title"><span class="section-num" aria-hidden="true">04</span>Contact</h2>
+            <p class="contact-lede">Open to conversations about LLM systems, RAG and applied ML. Email is the fastest way to reach me.</p>
+            <ul class="contact-links" role="list">
+              <li>
+                <a href="mailto:jayaprakash.gorla@gmail.com">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>
+                  jayaprakash.gorla@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/jaya-prakash-yadav-ai">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"/></svg>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/jpmartin22">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-github"/></svg>
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <span class="contact-static">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg>
+                  Chicago, IL
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate aria-labelledby="form-title">
+            <h3 class="form-title" id="form-title">Send a message</h3>
+            <p class="form-note">All fields are required.</p>
+
+            <div class="field">
+              <label for="from_name">Name</label>
+              <input id="from_name" name="from_name" type="text" autocomplete="name" required aria-describedby="from_name-error" data-error-required="Enter your name.">
+              <p class="field-error" id="from_name-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="reply_to">Email</label>
+              <input id="reply_to" name="reply_to" type="email" autocomplete="email" inputmode="email" spellcheck="false" required aria-describedby="reply_to-error" data-error-required="Enter your email address." data-error-format="Enter an email address in the format name@example.com.">
+              <p class="field-error" id="reply_to-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required aria-describedby="message-error" data-error-required="Enter a message."></textarea>
+              <p class="field-error" id="message-error"></p>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label>Leave this field empty<input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send message</button>
+            </div>
+
+            <div class="form-feedback">
+              <p class="form-status" id="form-status" role="status"></p>
+              <p class="form-alert" id="form-alert" role="alert"></p>
+            </div>
+          </form>
+
+          <noscript>
+            <p class="form-note">The contact form needs JavaScript. Please email me at <a href="mailto:jayaprakash.gorla@gmail.com">jayaprakash.gorla@gmail.com</a>.</p>
+          </noscript>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Jaya Prakash Yadav Gorla · Updated September 2026</p>
+        <ul class="footer-links" role="list">
+          <li><a href="https://github.com/jpmartin22/Portfolio">Site source on GitHub</a></li>
+          <li>
+            <a class="to-top" href="#top">
+              Back to top
+              <svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg>
+            </a>
           </li>
         </ul>
       </div>
-    </div>
-    <img src="FinalAbout.jpeg" alt="">
-
-  </section>
-  <section id="services">
-    <h1 class="header"><span>Services</span></h1>
-    <div class="services-container">
-      <div class="box">
-        <p>I am set to graduate in 2026 with a degree in Artificial Intelligence, equipped with comprehensive knowledge and hands-on experience in the field. As I embark on the transition from academic learning to professional application, I am actively seeking internships that align with my skills and interests. My expertise includes, but is not limited to: </p>
-        <h3><span>Machine Learning & Deep Learning:</span></h3>
-        <p>Proficient in designing, training, and deploying models for various applications such as image recognition, natural language processing, and predictive analytics.</p>
-        <h3><span>AI Ethics & Policy:</span></h3>
-        <p>Aware of the ethical implications of AI technologies and committed to developing solutions that are fair, transparent, and accountable.</p>
-        <p>I am eager to contribute my skills to innovative projects and collaborate with industry professionals to drive advancements in the field of Artificial Intelligence. If you are looking for a dedicated and enthusiastic AI professional to join your team, I would love to connect and explore potential internship opportunities.</p>
-        <img src="ai-generated-8540920.jpg" alt="">
-      </div>
-    </div>
-
-
- </section>
-<section id="contact">
-        <form id="contact-form">
-            <div class="input-box">
-                <span>Full Name</span>
-                <input type="text" name="from_name" placeholder="Enter Your Full Name" required>
-            </div>
-
-            <div class="input-box">
-                <span>Your Email</span>
-                <input type="email" name="reply_to" placeholder="Enter Your Email" required>
-            </div>
-
-            <div class="input-box">
-                <span>Your Message</span>
-                <textarea name="message" placeholder="Enter your message" required></textarea>
-            </div>
-
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Jaya Prakash Yadav Gorla's Portfolio. All rights reserved.</p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("2mX8ihjioWvOLgcMs");
-        })();
-
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const btn = this.querySelector('button');
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-
-            const templateParams = {
-                to_email: 'jayaprakash.gorla@gmail.com',
-                ...Object.fromEntries(new FormData(this))
-            };
-
-            emailjs.send('service_11c2jzf', 'template_wct97ga', templateParams)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert('Message sent successfully!');
-                    document.getElementById('contact-form').reset();
-                })
-                .catch(function(error) {
-                    console.log('FAILED...', error);
-                    alert('Failed to send message. Error: ' + JSON.stringify(error));
-                })
-                .finally(function() {
-                    btn.disabled = false;
-                    btn.textContent = 'Send Message';
-                });
-        });
-    </script>
-  <footer>
-    <div class="col-left">
-      <div class="col-box">
-        <span><i class='bx bxs-envelope' ></i></span>
-        <span>jayaprakash.gorla@gmail.com</span>
-      </div>
-      <div class="col-box">
-        <span><i class='bx bx-current-location'></i></span>
-        <span>Chicago,IL.</span>
-      </div>
-
-    </div>
-    <div class="col-right">
-      <a href="https://docs.google.com/document/d/1tFcGgTG2vrekNX9x6QXIoGX2pHPQXXmx/edit?usp=sharing&ouid=107152450583034785006&rtpof=true&sd=true" download="Jaya_Prakash_Yadav_CV.pdf" class="btn download-cv">
-        <i class='bx bx-download'></i> <span>Download CV</span>
-      </a>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/jaya-prakash-yadav-gorla-3315761ba/" target="_blank" rel="noopener noreferrer">
-          <i class='bx bxl-linkedin-square'></i> Linkedin
-        </a>
-        <a href="https://github.com/jpmartin22" target="_blank" rel="noopener noreferrer">
-          <i class='bx bxl-github'></i> Github
-        </a>
-      </div>
-    </div>
-  </footer>
-
-
-  <script src="script.js"></script>
   </body>
 </html>
