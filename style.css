@@ -13,6 +13,7 @@
   --surface: #FFFFFF;
   --surface-2: #F1F3F6;
   --text: #0B1220;
+  --logo: #0A2747;
   --muted: #4B5565;
   --hairline: #DDE1E7;
   --border-strong: #7A8496;
@@ -51,6 +52,7 @@
     --surface: #111A2C;
     --surface-2: #18233A;
     --text: #E8ECF3;
+    --logo: #E8ECF3;
     --muted: #A3ADBF;
     --hairline: #26324A;
     --border-strong: #6B778C;
@@ -73,6 +75,7 @@
   --surface: #111A2C;
   --surface-2: #18233A;
   --text: #E8ECF3;
+  --logo: #E8ECF3;
   --muted: #A3ADBF;
   --hairline: #26324A;
   --border-strong: #6B778C;
@@ -370,6 +373,22 @@ symbol .fill {
 }
 
 .brand:hover {
+  color: var(--primary);
+}
+
+.brand {
+  gap: 0.625rem;
+}
+
+.brand-mark {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--logo);
+  transition: color 0.15s ease-out;
+}
+
+.brand:hover .brand-mark {
   color: var(--primary);
 }
 

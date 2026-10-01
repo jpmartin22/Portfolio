@@ -12,7 +12,7 @@ Plain HTML, CSS and JavaScript with no build step. GitHub Pages serves it from t
 - `style.css`: design tokens (light and dark), layout, print styles
 - `script.js`: theme toggle, mobile menu, current-section highlight, contact form
 - `404.html`: not-found page (uses `/Portfolio/`-rooted paths because Pages serves it at any depth)
-- `assets/`: portrait photos (AVIF and JPEG), social preview image, icons
+- `assets/`: portrait photos (AVIF and JPEG), the logo (`logo.svg`, a vector trace of the brush-ring mark), social preview image and icons
 
 ## Preview locally
 
