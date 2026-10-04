@@ -2,7 +2,7 @@
 
 Personal portfolio of Jaya Prakash Yadav Gorla, an AI/ML engineer based in Chicago.
 
-Live site: https://jpmartin22.github.io/Portfolio/
+Live site: https://jayaprakashyadav.com/
 
 Plain HTML, CSS and JavaScript with no build step. GitHub Pages serves it from the root of `main`, so pushing to `main` publishes the site.
 
@@ -11,19 +11,19 @@ Plain HTML, CSS and JavaScript with no build step. GitHub Pages serves it from t
 - `index.html`: all content, plus metadata and structured data
 - `style.css`: design tokens (light and dark), layout, print styles
 - `script.js`: theme toggle, mobile menu, current-section highlight, contact form
-- `404.html`: not-found page (uses `/Portfolio/`-rooted paths because Pages serves it at any depth)
+- `CNAME`: the custom domain GitHub Pages serves the site on
+- `404.html`: not-found page (uses root-relative paths because Pages serves it at any depth)
 - `assets/`: portrait photos (AVIF and JPEG), the logo (`logo.svg`, a vector trace of the brush-ring mark), social preview image and icons
 
 ## Preview locally
 
-The site lives under `/Portfolio/` on GitHub Pages, so preview it under the same path to catch broken URLs:
+The site is served from the domain root, so a plain server works:
 
 ```sh
-mkdir -p /tmp/site && ln -sfn "$PWD" /tmp/site/Portfolio
-python3 -m http.server 8000 --bind 127.0.0.1 --directory /tmp/site
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:8000/Portfolio/. Add `?theme=dark` or `?theme=light` to force a theme.
+Open http://127.0.0.1:8000/. Add `?theme=dark` or `?theme=light` to force a theme.
 
 ## Editing
 
