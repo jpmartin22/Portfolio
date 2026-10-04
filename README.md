@@ -13,7 +13,7 @@ Plain HTML, CSS and JavaScript with no build step. GitHub Pages serves it from t
 - `script.js`: theme toggle, mobile menu, current-section highlight, contact form
 - `CNAME`: the custom domain GitHub Pages serves the site on
 - `404.html`: not-found page (uses root-relative paths because Pages serves it at any depth)
-- `assets/`: portrait photos (AVIF and JPEG), the logo (`logo.svg`, a vector trace of the brush-ring mark), social preview image and icons
+- `assets/`: portrait photos (JPEG), the logo (`logo.svg`, a vector trace of the brush-ring mark), social preview image and icons
 
 ## Preview locally
 
@@ -39,7 +39,7 @@ The source photo is Display P3. Convert to sRGB first, crop 4:5, then resize by 
 ```sh
 sips -m "/System/Library/ColorSync/Profiles/sRGB Profile.icc" photo.jpg --out src.jpg
 sips -c 2200 1760 --cropOffset 946 602 src.jpg --out full.jpg    # height width, then offsetY offsetX
-sips --resampleWidth 1200 -s format avif -s formatOptions 55 full.jpg --out assets/img/portrait-1200.avif
+sips --resampleWidth 1200 -s format avif -s formatOptions 55 full.jpg --out assets/img/portrait-1200.jpg
 ```
 
 ## Contact form
